@@ -25,23 +25,24 @@ void IPv4PacketStructure() {
 
 void TCPPacketStructure() {
     cout << "TCP Packet Structure:\n";
-    cout << "----------------------\n";
-    cout << "|    Source Port       |\n";
-    cout << "|----------------------|\n";
-    cout << "|  Destination Port    |\n";
-    cout << "|----------------------|\n";
-    cout << "|    Sequence Number   |\n";
-    cout << "|----------------------|\n";
-    cout << "|    Acknowledgment Number  |\n";
-    cout << "|----------------------|\n";
-    cout << "| Data  |Reserved|Flags|\n";
-    cout << "|----------------------|\n";
-    cout << "|     Window Size      |\n";
-    cout << "|----------------------|\n";
-    cout << "|    Checksum          |\n";
-    cout << "|----------------------|\n";
-    cout << "|  Urgent Pointer      |\n";
-    cout << "|----------------------|\n";
+   cout << "0                    1                   2                   3\n";
+      cout << "0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1\n";
+    cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n";
+    cout << "|            Source Port           |      Destitation Port        |\n";
+    cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n";
+    cout << "|                     Sequence Number                             |\n";
+    cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n";
+    cout << "|                     Acknowlegement Number                       |\n";
+    cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n";
+    cout << "|   Data      | Reserved ||U|A|P|R|S|F|         | Window          |\n";
+    cout << "|  Offset     |          ||R|C|S|S|Y|I|         |                 |\n";
+    cout << "|             |          ||G|K|T|H|N|N|         |                 |\n";
+    cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n";
+    cout << "|                Checksum          |       Urgent Pointer          |\n";
+    cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n";
+    cout << "|                 Options                  |     Padding          |\n";
+    cout << "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n";
+    cout << "|                      data                                       |\n";
 }
 
 void writePacketStructureToFile(const string& fileName, const string& packetStructure) {
